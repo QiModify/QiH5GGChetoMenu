@@ -1,0 +1,168 @@
+<!----ChetoMenu HTML5---->
+<!----Qi开源 QQ：1156332575 请勿倒卖 倒卖死妈---->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QiModify-ChetoMenu</title>
+    <style>
+
+        #showMenu{
+            width:100px;
+            height:80px;
+            text-align: center;
+            margin: 0 auto;
+            background-color: red;
+        }
+
+        #mainWindow {
+            position: relative;
+            width: 480px;
+            height: 310px;
+            margin: 0 auto auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        #closeBar {
+            width: 480px;
+            height: 25px;
+            margin: 180px auto auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            font-family: "PingFang",system-ui;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        #closeBtn {
+            float: right;
+            font-size: 21px;
+            cursor: pointer;
+        }
+
+        #btn1Label{
+            padding-left: 6px;
+            color: white;
+            font-family: "PingFang",system-ui;
+            font-size: 19px;
+        }
+        #btn1{
+            display: inline-block;
+            float: right;
+            text-align: center;
+            width: 45px;
+            height: 25px;
+            background-color: rgba(229.5, 0, 0, 1);
+            cursor: pointer;
+        }
+        .otherBtnLabel{
+            margin-top: 1px;
+            padding-left: 6px;
+            color: white;
+            font-family: "PingFang",system-ui;
+            font-size: 19px;
+        }
+        .otherBtn{
+            display: inline-block;
+            float: right;
+            text-align: center;
+            width: 45px;
+            height: 25px;
+            background-color: rgba(229.5, 0, 0, 1);
+            cursor: pointer;
+        }
+        input[type=range]{
+            -webkit-appearance: none;
+            background-color: rgba(0,0,0,0);
+            position: absolute;
+            z-index: 9999;
+            width: 479px;
+            bottom: 10px;
+            height: 25px;
+        }
+        input[type=range]::-webkit-slider-thumb{
+            -webkit-appearance: none;
+            z-index: 9999999;
+            background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QBYRXhpZgAATU0AKgAAAAgAAgESAAMAAAABAAEAAIdpAAQAAAABAAAAJgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAA6ADAAQAAAABAAAAFwAAAAD/wAARCAAXAAMDAREAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9sAQwABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/9sAQwEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEB/90ABAAB/9oADAMBAAIRAxEAPwD+sZeh/wB5/wD0Nq/5l82/5GeO/wCwqt/6Wz+hafwR9D//0P6xl6H/AHn/APQ2r/mXzb/kZ47/ALCq3/pbP6Fp/BH0P//R/rGXof8Aef8A9Dav+ZfNv+Rnjv8AsKrf+ls/oWn8EfQ//9k=");
+            width: 3px;
+            height: 23px;
+        }
+        .sliderLabel{
+            margin-top: 1px;
+            padding-left: 6px;
+            color: white;
+            font-family: "PingFang",system-ui;
+            font-size: 19px;
+        }
+        .sliderValue{
+            display: inline-block;
+            float: right;
+            text-align: left;
+            background-color: rgba(229.5, 0, 0, 1);
+        }
+    </style>
+</head>
+<body>
+    <div id="showMenu"></div>
+    <div id="closeBar">▼ QiModify - ChetoMenu
+        <span id="closeBtn">×</span>
+    </div>
+    <div id="mainWindow">
+        <div id="btn1Label">功能1<div id="btn1">OFF</div></div>
+        <div class="otherBtnLabel">功能2<div class="otherBtn">OFF</div></div>
+        <div class="otherBtnLabel">功能3<div class="otherBtn">OFF</div></div>
+        <div class="otherBtnLabel">功能4<div class="otherBtn">OFF</div></div>
+        <div class="otherBtnLabel">功能5<div class="otherBtn">OFF</div></div>
+        <div class="otherBtnLabel">功能6<div class="otherBtn">OFF</div></div>
+        <div class="otherBtnLabel">功能7<div class="otherBtn">OFF</div></div>
+        <div class="otherBtnLabel">功能8<div class="otherBtn">OFF</div></div>
+        <div class="otherBtnLabel">功能9<div class="otherBtn">OFF</div></div>
+        <div class="otherBtnLabel">功能10<div class="otherBtn">OFF</div></div>
+        <div class="sliderLabel">滑条1<div class="sliderValue" style="background: none">20.00</div></div>
+        <input type="range" id="slider" value="20" min="0" max="200" step="0.01"/>
+    </div>
+    <script>
+        let mainWindow = document.getElementById('mainWindow');
+        let closeMenuBar = document.getElementById("closeBar");
+        let showMenuBtn = document.getElementById("showMenu")
+        let slider = document.getElementById('slider');
+        let sliderValue = document.getElementsByClassName("sliderValue")[0]
+        slider.onchange = function(){
+            sliderValue.innerHTML = slider.value;
+        }
+
+        let btn1 = document.getElementById("btn1");
+        btn1.onclick = function (){
+            if(btn1.innerText == "OFF"){
+                btn1.style.backgroundColor = "rgba(0,178.5,0,1)";
+                btn1.innerText = "ON";
+            }else{
+                btn1.style.backgroundColor = "rgba(229.5,0,0,1)";
+                btn1.innerText = "OFF";
+            }
+
+
+        }
+        let btns = document.getElementsByClassName("otherBtn");
+        for(let i = 0;i < btns.length; i++){
+            btns[i].onclick = function (){
+                if(btns[i].innerText == "OFF"){
+                    btns[i].style.backgroundColor = "rgba(0,178.5,0,1)";
+                    btns[i].innerText = "ON";
+                }else{
+                    btns[i].style.backgroundColor = "rgba(229.5,0,0,1)";
+                    btns[i].innerText = "OFF";
+                }
+            }
+        }
+
+        let closeMenuBtn = document.getElementById("closeBtn");
+        closeMenuBtn.onclick = function (){
+            mainWindow.style.display = "none";
+            closeMenuBar.style.display = "none";
+        }
+        showMenuBtn.onclick = function (){
+            mainWindow.style.display = "block";
+            closeMenuBar.style.display = "block";
+        }
+    </script>
+</body>
+</html>
